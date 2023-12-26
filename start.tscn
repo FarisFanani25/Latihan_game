@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2gnjrgemm0hb"]
+
+[ext_resource type="PackedScene" uid="uid://nje8o2jtrp88" path="res://main_menu.tscn" id="1_d3fmy"]
+[ext_resource type="AudioStream" uid="uid://cm1nuljghch1" path="res://Clement Panchout _ Jelly Blob _ 2017.wav" id="2_e4dpw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("1_d3fmy")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_e4dpw")
+autoplay = true

@@ -1,0 +1,60 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="YoutubeRoad"
+run/main_scene="res://start.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="savesystemGodot"
+config/features=PackedStringArray("4.1", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[input]
+
+up={
+"deadzone": 0.5,
+"events": [null, null, null]
+}
+down={
+"deadzone": 0.5,
+"events": []
+}
+left={
+"deadzone": 0.5,
+"events": []
+}
+enter={
+"deadzone": 0.5,
+"events": []
+}
+pouse={
+"deadzone": 0.5,
+"events": []
+}
+right={
+"deadzone": 0.5,
+"events": []
+}
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_navigation/layer_1="Road Navigation"
+2d_navigation/layer_2="Grass Navigation"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://deude24v8oj73"]
+
+[ext_resource type="Texture2D" uid="uid://y104bmulgi7u" path="res://icon.svg" id="1_8jod4"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_uxjoy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_12q3k"]
+radius = 85.1469
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obstb"]
+radius = 61.2882
+
+[node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
+collision_layer = 4
+collision_mask = 7
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_uxjoy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.717647, 0.113725, 0.215686, 1)
+texture = ExtResource("1_8jod4")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("CircleShape2D_12q3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_obstb")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 3
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
